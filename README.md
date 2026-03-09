@@ -32,6 +32,7 @@ Start the TIAGo simulation environment:
    ```
    
 3. **Start Visualization (Optional)**
+   
 To monitor the robot's sensors and TF tree via Foxglove:
    ```bash
    ros2 run foxglove_bridge foxglove_bridge
@@ -45,15 +46,12 @@ Execute the main Python script to start the VLA-based control loop:
    ```
 
 
-🎥 Logic Flow & Decision Making
+## 🎥 Logic Flow & Decision Making
+
 The node operates in a continuous loop:
 
-Subscribe: Captures raw RGB frames from the TIAGo Astra camera.
-
-Inference: Sends the image + prompt to the VLA model to classify the scene.
-
-Actuate: - TURN: If an obstacle (e.g., tree) is detected (Angular Velocity = 1.0 rad/s).
-
-FORWARD: If the path is clear (Linear Velocity = 0.2 m/s).
-
-GOAL: Mission complete.
+1. **Subscribe:** Captures raw RGB frames from the TIAGo Astra camera topic.
+2. **Inference:** Sends the image and prompt to the VLA model (Qwen2.5-VL) to classify the scene.
+3. **Actuate:** * **TURN:** If an obstacle (e.g., tree) is detected (Angular Velocity = 1.0 rad/s).
+    * **FORWARD:** If the path to the door is clear (Linear Velocity = 0.2 m/s).
+    * **GOAL:** Mission complete once the target is reached.
