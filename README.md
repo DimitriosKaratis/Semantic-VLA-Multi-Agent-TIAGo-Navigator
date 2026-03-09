@@ -4,7 +4,7 @@ This repository contains a **ROS2 Humble** node that enables a **TIAGo Lite** ro
 
 ## 🤖 System Overview
 
-The node integrates a Large Multimodal Model (Qwen2.5-VL) directly into the robot's control loop. It performs high-level visual reasoning to detect obstacles (e.g., trees, furniture) and generates velocity commands (`Twist` messages) to reach a specified goal (e.g., a door).
+The node integrates a Large Multimodal Model (Qwen2.5-VL) directly into the robot's control loop. It performs high-level visual reasoning to detect obstacles (e.g., trees, furniture) and generates velocity commands (`Twist` messages) to reach a specified goal (e.g. a door).
 
 ### Key Components:
 * **Perception:** Real-time image acquisition from the `/Tiago_Lite/Astra_rgb/image_color` topic.
@@ -31,14 +31,14 @@ Start the TIAGo simulation environment:
    ros2 launch webots_ros2_tiago robot_launch.py
    ```
    
-3. Start Visualization (Optional)
+3. **Start Visualization (Optional)**
 To monitor the robot's sensors and TF tree via Foxglove:
    ```bash
    ros2 run foxglove_bridge foxglove_bridge
    ```
 Then, open the Foxglove Studio and connect to localhost.
 
-4. Run the AI Navigator Node
+4. **Run the AI Navigator Node**
 Execute the main Python script to start the VLA-based control loop:
    ```bash
    python3 tiago_ai_navigator.py
