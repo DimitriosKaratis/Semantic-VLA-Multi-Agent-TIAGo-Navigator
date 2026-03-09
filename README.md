@@ -25,22 +25,18 @@ The node integrates a Large Multimodal Model (Qwen2.5-VL) directly into the robo
    source /opt/ros/humble/setup.bash
    ```
 
-2. **Launch Webots Simulation**
-Start the TIAGo simulation environment:
+2. **Launch Webots Simulation:**
    ```bash
    ros2 launch webots_ros2_tiago robot_launch.py
    ```
    
-3. **Start Visualization (Optional)**
-   
-To monitor the robot's sensors and TF tree via Foxglove:
+3. **Start Visualization (Optional)**:   
    ```bash
    ros2 run foxglove_bridge foxglove_bridge
    ```
-Then, open the Foxglove Studio and connect to localhost.
+   Then, open the Foxglove Studio and connect to localhost.
 
-4. **Run the AI Navigator Node**
-Execute the main Python script to start the VLA-based control loop:
+4. **Run the AI Navigator Node:**
    ```bash
    python3 tiago_ai_navigator.py
    ```
