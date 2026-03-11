@@ -46,7 +46,7 @@ Unlike traditional navigation stacks, this implementation uses a **Multi-Agent P
 
 4. **Run the AI Navigator Node:**
    ```bash
-   python3 tiago_ai_navigator.py
+   python3 tiago_vla_multi_agent_navigator.py
    ```
 ## 🖼️ Simulation Environment & Perception
 
