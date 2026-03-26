@@ -65,7 +65,7 @@ The node implements a **closed-loop feedback system** that bridges high-level AI
 1. **Perception**: Captures full RGB frames from the robot's camera and encodes them to **Base64** for VLM processing.
 2. **Reasoning**: 
     * **Observer Agent**: Analyzes the scene and provides localized semantic context (e.g., target door position).
-    * **Pilot Agent**: Processes the context and generates a normalized Steering Error $e \in [-1, 1]$.
+    * **Pilot Agent**: Processes the semantic context to generate two control setpoints: a normalized Steering Error $e \in [-1, 1]$ for alignment and a Speed Factor $s \in [0, 1]$ for longitudinal momentum.
 3. **Control (P-Law)**:
     * **Angular Velocity ($Z$ axis)**: $\omega = -1.0 \times K_p \times e$
     * **Linear Velocity ($X$ axis)**: $V = V_{max} \times \text{SpeedFactor} \times (1 - |e| \times 0.6)$
